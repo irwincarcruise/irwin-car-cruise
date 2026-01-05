@@ -1,0 +1,322 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Irwin Car Cruise — Spring 2026</title>
+  <meta name="description" content="Irwin Car Cruise — Spring 2026 (TBD). Pre-register your vehicle online. Presented by the Irwin Business & Professional Association (IBPA)." />
+  <meta property="og:title" content="Irwin Car Cruise — Spring 2026" />
+  <meta property="og:description" content="Spring 2026 (TBD). Pre-register your vehicle online." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/img/irwin-car-cruise-logo.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#home">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <div class="brand">
+        <a class="brand-ibpa" href="https://www.irwinbpa.com" target="_blank" rel="noopener">
+          <img
+            src="https://static.wixstatic.com/media/090148_0d085a14ec5448d088634db0a2b88ce4~mv2.png/v1/fill/w_202,h_92,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IBPA%20Logo_v3.png"
+            alt="Irwin Business & Professional Association (IBPA)"
+          />
+        </a>
+        <div class="brand-text">
+          <div class="brand-title">Irwin Car Cruise</div>
+          <div class="brand-sub">Presented by IBPA</div>
+        </div>
+      </div>
+
+      <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#register">Register</a>
+        <a href="#sponsors">Sponsors</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-pill" href="checkin.html">Staff Check-In</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home" tabindex="-1">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="kicker">Spring 2026 • Downtown Irwin, PA</div>
+          <h1>Irwin Car Cruise</h1>
+          <p class="lead">
+            A springtime classic-car cruise in the heart of Irwin.
+            <strong>Date &amp; time: TBD</strong>.
+          </p>
+
+          <div class="hero-cards">
+            <div class="card">
+              <div class="card-title">Pre-Registration</div>
+              <div class="card-body">
+                Secure your spot online. <strong>$10</strong> (pre-reg).
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-title">Day-Of Entry</div>
+              <div class="card-body">
+                <strong>$15</strong> day-of (space-available / metered).
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-title">Location</div>
+              <div class="card-body">
+                Downtown Irwin • Main Street area (details coming soon).
+              </div>
+            </div>
+          </div>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#register">Pre-Register</a>
+            <a class="btn btn-ghost" href="#faq">See FAQs</a>
+          </div>
+
+          <p class="micro">
+            Tip: On mobile, tap <strong>Pre-Register</strong> to jump straight to the form.
+          </p>
+        </div>
+
+        <div class="hero-logo" aria-label="Irwin Car Cruise logo">
+          <!-- Put your logo here: assets/img/irwin-car-cruise-logo.jpg -->
+          <img src="assets/img/irwin-car-cruise-logo.jpg" alt="Irwin Car Cruise logo" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <h2>About the Cruise</h2>
+        <p>
+          The Irwin Car Cruise brings classic cars and community together in Downtown Irwin.
+          Expect great vehicles, a fun atmosphere, and a simple check-in process on event day.
+        </p>
+
+        <div class="two-col">
+          <div class="info-box">
+            <h3>What you need to know</h3>
+            <ul>
+              <li><strong>Spring 2026</strong> — exact date/time coming soon</li>
+              <li><strong>Pre-reg:</strong> $10 (recommended)</li>
+              <li><strong>Day-of:</strong> $15, <em>metered based on available spots</em></li>
+              <li>Participants should follow volunteer instructions for staging/parking</li>
+            </ul>
+          </div>
+          <div class="info-box">
+            <h3>How people use this site</h3>
+            <ul>
+              <li>Get the basics (date, location, fee)</li>
+              <li>Tap <strong>Pre-Register</strong> and complete the form on a phone</li>
+              <li>Save the confirmation email for event day</li>
+              <li>Event staff use the <strong>Staff Check-In</strong> link day-of</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="register">
+      <div class="container">
+        <div class="section-head">
+          <h2>Pre-Register Your Vehicle</h2>
+          <p class="subhead">
+            Complete the form below. When payment is enabled in Jotform (Stripe later), this page will automatically take online payments.
+          </p>
+        </div>
+
+        <div class="form-shell">
+          <!-- Recommended embed: iframe + Jotform embed handler -->
+          <iframe
+            id="JotFormIFrame-243356587414160"
+            title="Irwin Car Cruise Show Registration Form"
+            onload="window.parent.scrollTo(0,0)"
+            allowtransparency="true"
+            allow="geolocation; microphone; camera; fullscreen; payment"
+            src="https://pci.jotform.com/form/243356587414160"
+            frameborder="0"
+            style="min-width:100%;max-width:100%;height:820px;border:none;"
+            scrolling="no"
+          ></iframe>
+        </div>
+
+        <div class="note">
+          <strong>Day-of entry is space-available.</strong> If day-of fills up, registration will pause once capacity is reached.
+        </div>
+
+        <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+        <script>
+          window.jotformEmbedHandler(
+            "iframe[id='JotFormIFrame-243356587414160']",
+            "https://pci.jotform.com/"
+          );
+        </script>
+      </div>
+    </section>
+
+    <section class="section" id="sponsors">
+      <div class="container">
+        <div class="section-head">
+          <h2>Sponsorships</h2>
+          <p class="subhead">Support the event and get your business in front of the community. Details can be finalized later.</p>
+        </div>
+
+        <div class="tier-grid">
+          <div class="tier">
+            <div class="tier-top">
+              <h3>Gold Sponsor</h3>
+              <div class="tier-price">TBD</div>
+            </div>
+            <ul>
+              <li>Featured placement on website</li>
+              <li>On-site signage (space permitting)</li>
+              <li>Shout-outs on social posts</li>
+            </ul>
+            <a class="btn btn-primary btn-small" href="#contact">Request info</a>
+          </div>
+
+          <div class="tier">
+            <div class="tier-top">
+              <h3>Silver Sponsor</h3>
+              <div class="tier-price">TBD</div>
+            </div>
+            <ul>
+              <li>Website sponsor listing</li>
+              <li>On-site signage (space permitting)</li>
+            </ul>
+            <a class="btn btn-primary btn-small" href="#contact">Request info</a>
+          </div>
+
+          <div class="tier">
+            <div class="tier-top">
+              <h3>Bronze Sponsor</h3>
+              <div class="tier-price">TBD</div>
+            </div>
+            <ul>
+              <li>Website sponsor listing</li>
+            </ul>
+            <a class="btn btn-primary btn-small" href="#contact">Request info</a>
+          </div>
+        </div>
+
+        <div class="note">
+          Want this fully automated later? We can add a sponsor upload form that updates this section automatically (logo + link) — same concept as Light Up Norwin.
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <h2>FAQ</h2>
+          <p class="subhead">Quick answers. We’ll update these as Spring 2026 details are confirmed.</p>
+        </div>
+
+        <div class="faq">
+          <details>
+            <summary>When is the Irwin Car Cruise?</summary>
+            <div class="faq-body">Spring 2026 — exact date and hours are TBD.</div>
+          </details>
+          <details>
+            <summary>How much does it cost?</summary>
+            <div class="faq-body">
+              Pre-registration is <strong>$10</strong>. Day-of entry is <strong>$15</strong> and metered by available spots.
+            </div>
+          </details>
+          <details>
+            <summary>Do I have to pre-register?</summary>
+            <div class="faq-body">
+              No, but pre-registration is recommended. It helps us plan and it’s usually faster on event day.
+            </div>
+          </details>
+          <details>
+            <summary>What happens if we hit capacity?</summary>
+            <div class="faq-body">
+              Day-of entry pauses once we’re full. Pre-registration may have a cap too (we’ll post it here if needed).
+            </div>
+          </details>
+          <details>
+            <summary>Where do I check in?</summary>
+            <div class="faq-body">
+              Downtown Irwin / Main Street area. Exact check-in point and staging instructions will be posted closer to the event.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <h2>Contact</h2>
+          <p class="subhead">Questions or sponsor inquiries? Reach out.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="info-box">
+            <h3>Email</h3>
+            <p><a href="mailto:info@irwinbpa.com">info@irwinbpa.com</a></p>
+            <p class="micro">Swap this later if you want a dedicated car-cruise inbox.</p>
+          </div>
+
+          <div class="info-box">
+            <h3>Presented by</h3>
+            <p class="presented">
+              <img
+                class="ibpa-inline"
+                src="https://static.wixstatic.com/media/090148_0d085a14ec5448d088634db0a2b88ce4~mv2.png/v1/fill/w_202,h_92,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IBPA%20Logo_v3.png"
+                alt="IBPA logo"
+              />
+              <span>Irwin Business &amp; Professional Association</span>
+            </p>
+            <p class="micro"><a href="https://www.irwinbpa.com" target="_blank" rel="noopener">Visit irwinbpa.com</a></p>
+          </div>
+        </div>
+
+        <div class="to-top">
+          <a href="#top">Back to top ↑</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <img
+          src="https://static.wixstatic.com/media/090148_0d085a14ec5448d088634db0a2b88ce4~mv2.png/v1/fill/w_202,h_92,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IBPA%20Logo_v3.png"
+          alt="IBPA"
+        />
+        <div class="footer-text">
+          <div><strong>Irwin Car Cruise</strong></div>
+          <div>Presented by IBPA • Spring 2026 (TBD)</div>
+        </div>
+      </div>
+      <div class="footer-right">
+        <a href="checkin.html">Staff Check-In</a>
+        <span class="dot">•</span>
+        <a href="#register">Register</a>
+        <span class="dot">•</span>
+        <a href="https://www.irwinbpa.com" target="_blank" rel="noopener">IBPA</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
