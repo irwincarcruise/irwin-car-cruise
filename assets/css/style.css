@@ -459,7 +459,7 @@ details p { color: var(--muted); }
   filter: brightness(.95);
 }
 
-/* ================= RESPONSIVE + MOBILE NAV ================= */
+/* ================= RESPONSIVE ================= */
 
 @media (max-width: 960px) {
   h1 { font-size: 44px; }
@@ -475,10 +475,27 @@ details p { color: var(--muted); }
   .hero-stats { grid-template-columns: 1fr; }
 }
 
-/* Mobile dropdown nav that ACTUALLY hides desktop links */
-@media (max-width: 860px) {
-  .nav-toggle { display: inline-flex; margin-left: auto; }
+/* ================= MOBILE NAV + CENTERED HAMBURGER ================= */
 
+@media (max-width: 860px) {
+  /* Make header: left logo | centered hamburger | right logo */
+  .header-inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .header-left { justify-self: start; }
+  .header-right { justify-self: end; }
+
+  .nav-toggle {
+    display: inline-flex;
+    justify-self: center;
+    margin-left: 0;
+  }
+
+  /* Hide desktop nav, show dropdown only when .show */
   .nav {
     display: none !important;
 
@@ -510,7 +527,7 @@ details p { color: var(--muted); }
     background: rgba(212,175,55,.14);
   }
 
-  /* Keep the floating button out of the iOS browser UI area */
+  /* Keep floating button out of iOS browser UI area */
   #backToTop {
     bottom: 80px;
     right: 16px;
