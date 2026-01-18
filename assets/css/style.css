@@ -7,17 +7,27 @@
   --radius: 22px;
   --shadow: 0 18px 40px rgba(0,0,0,.12);
   --max-width: 1200px;
+
+  /* subtle color splash */
+  --red: #9b1c1c;
+  --red-soft: #f3d6d6;
+  --gold-glow: rgba(212,175,55,.35);
 }
 
 * { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
 
+/* Helps anchor links land below sticky header */
+:target { scroll-margin-top: 92px; }
+
 body {
   margin: 0;
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--dark);
   background: #fff;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 .container {
@@ -170,19 +180,29 @@ h1 {
   font-weight: 700;
   text-decoration: none;
   border: 1px solid transparent;
+  transition: transform .12s ease, filter .12s ease, background .12s ease, border-color .12s ease;
 }
+
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0px) scale(.98); }
 
 .btn-gold {
-  background: var(--gold);
+  background: linear-gradient(135deg, var(--gold), #b8962e);
   color: #111;
+  box-shadow: 0 8px 20px rgba(0,0,0,.18);
 }
 
-.btn-gold:hover { filter: brightness(.95); }
+.btn-gold:hover { filter: brightness(.97); }
 
 .btn-ghost {
-  background: rgba(0,0,0,.05);
-  border-color: rgba(0,0,0,.1);
-  color: var(--dark);
+  background: #111;
+  border-color: rgba(212,175,55,.35);
+  color: var(--gold);
+}
+
+.btn-ghost:hover {
+  background: #000;
+  color: #fff;
 }
 
 .hero-stats {
@@ -225,6 +245,18 @@ h2 {
   font-family: Poppins, sans-serif;
   font-size: 36px;
   margin-bottom: 12px;
+  position: relative;
+}
+
+/* subtle brand underline */
+h2::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 4px;
+  margin-top: 10px;
+  border-radius: 4px;
+  background: linear-gradient(to right, var(--red), var(--gold));
 }
 
 .lead {
@@ -256,6 +288,12 @@ h2 {
   border-radius: 18px;
   padding: 16px;
   box-shadow: 0 10px 24px rgba(0,0,0,.06);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0,0,0,.08);
 }
 
 .info-card h3 {
@@ -302,7 +340,6 @@ h2 {
   pointer-events: none;
 }
 
-/* ✅ Helps readability while letting image show */
 .visual-title,
 .visual-sub {
   position: relative;
@@ -320,7 +357,7 @@ h2 {
   margin-top: 6px;
 }
 
-/* ================= DETAILS ================= */
+/* ================= DETAILS (FIXED + COLOR SPLASH) ================= */
 
 .detail-tiles {
   display: grid;
@@ -337,26 +374,45 @@ h2 {
   box-shadow: 0 10px 24px rgba(0,0,0,.06);
 }
 
-/* ✅ FIX: Even alignment + equal visual height for Event Details tiles */
+/* ✅ Event Details alignment: even height, clean baseline, no collapse */
 .tile.tile-inline {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 12px;
   padding: 18px 20px;
-  min-height: 78px; /* keeps all three tiles even */
+  min-height: 82px;
+  background: linear-gradient(135deg, rgba(255,255,255,1), rgba(255,255,255,.96));
+  box-shadow:
+    0 10px 24px rgba(0,0,0,.06),
+    inset 0 0 0 1px rgba(212,175,55,.15);
+}
+
+/* Accent stripe */
+.tile.tile-inline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 14px;
+  bottom: 14px;
+  width: 4px;
+  border-radius: 4px;
+  background: linear-gradient(to bottom, var(--gold), var(--red));
 }
 
 .tile-k {
   font-family: Poppins, sans-serif;
   font-size: 12px;
-  font-weight: 700;
-  color: var(--muted);
-  min-width: 56px; /* consistent label column width */
+  font-weight: 800;
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  min-width: 56px;
 }
 
 .tile-v {
   display: flex;
-  align-items: baseline; /* clean baseline alignment for mixed font sizes */
+  align-items: baseline;
   gap: 10px;
   flex-wrap: wrap;
 }
@@ -366,34 +422,23 @@ h2 {
   font-size: 24px;
   font-weight: 800;
   line-height: 1.05;
+  color: #111;
   white-space: nowrap;
 }
 
 .tile-v-sub {
   font-size: 14px;
-  color: var(--muted);
-  font-weight: 600;
+  color: #6a2a2a;
+  font-weight: 700;
   line-height: 1.2;
 }
 
-/* (Old styles kept for compatibility if used elsewhere) */
-.tile-label {
-  font-family: Poppins, sans-serif;
-  font-size: 12px;
-  color: var(--muted);
-}
-
-.tile-main {
-  font-family: Poppins, sans-serif;
-  font-size: 24px;
-  font-weight: 800;
-  margin-top: 6px;
-}
-
-.tile-sub {
-  font-size: 14px;
-  color: var(--muted);
-  margin-top: 6px;
+.tile.tile-inline:hover {
+  box-shadow:
+    0 16px 36px rgba(0,0,0,.10),
+    0 0 0 1px rgba(212,175,55,.35),
+    0 8px 30px var(--gold-glow);
+  transform: translateY(-2px);
 }
 
 /* ================= FORM ================= */
@@ -427,6 +472,13 @@ h2 {
   font-weight: 700;
   color: rgba(0,0,0,.5);
   background: rgba(255,255,255,.7);
+  transition: transform .18s ease, background .18s ease, border-color .18s ease;
+}
+
+.sponsor-tile:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.92);
+  border-color: rgba(212,175,55,.55);
 }
 
 .center {
@@ -445,6 +497,7 @@ details {
   padding: 14px 18px;
   margin-bottom: 12px;
   box-shadow: 0 10px 20px rgba(0,0,0,.05);
+  transition: transform .18s ease, box-shadow .18s ease;
 }
 
 summary {
@@ -477,7 +530,7 @@ details p { color: var(--muted); }
   font-weight: 700;
 }
 
-/* ================= FLOATING BACK TO TOP (FOLLOWING) ================= */
+/* ================= FLOATING BACK TO TOP ================= */
 
 #backToTop {
   position: fixed;
@@ -514,6 +567,14 @@ details p { color: var(--muted); }
   filter: brightness(.95);
 }
 
+/* ================= ACCESSIBILITY ================= */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid rgba(212,175,55,.55);
+  outline-offset: 3px;
+}
+
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 960px) {
@@ -533,7 +594,6 @@ details p { color: var(--muted); }
 /* ================= MOBILE NAV + CENTERED HAMBURGER ================= */
 
 @media (max-width: 860px) {
-  /* Make header: left logo | centered hamburger | right logo */
   .header-inner {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
@@ -550,7 +610,7 @@ details p { color: var(--muted); }
     margin-left: 0;
   }
 
-  /* Hide desktop nav, show dropdown only when .show */
+  /* Dropdown base */
   .nav {
     display: none !important;
 
@@ -569,9 +629,20 @@ details p { color: var(--muted); }
     flex-direction: column;
     gap: 6px;
     z-index: 999;
+
+    transform-origin: top center;
+    transform: translateY(-6px) scale(.98);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .18s ease, transform .18s ease;
   }
 
-  .nav.show { display: flex !important; }
+  .nav.show {
+    display: flex !important;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+  }
 
   .nav a {
     padding: 14px 14px;
@@ -582,9 +653,14 @@ details p { color: var(--muted); }
     background: rgba(212,175,55,.14);
   }
 
-  /* Keep floating button out of iOS browser UI area */
   #backToTop {
     bottom: 80px;
     right: 16px;
   }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; animation: none !important; }
 }
