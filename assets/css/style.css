@@ -255,13 +255,35 @@ h2 {
 }
 
 .visual-card {
-  background: linear-gradient(160deg, #0f111a, #1c2033);
+  position: relative;
   color: #fff;
   border-radius: var(--radius);
   padding: 26px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      rgba(15,17,26,0.88),
+      rgba(28,32,51,0.92)
+    ),
+    url("../img/yellow_car.jpg");
+
+  background-size: cover;
+  background-position: center;
+}
+.visual-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at top left,
+    rgba(255,215,0,0.15),
+    transparent 60%
+  );
+  pointer-events: none;
 }
 
 .visual-title {
