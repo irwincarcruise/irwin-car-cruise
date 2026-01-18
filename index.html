@@ -2,312 +2,288 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Irwin Car Cruise | April 25, 2026</title>
-  <meta name="description" content="Irwin Car Cruise - Register your vehicle online." />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Irwin Car Cruise</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
 
   <!-- ================= HEADER ================= -->
-  <header class="header" id="top">
-    <div class="container header-inner">
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
 
-      <!-- Left: Irwin Car Cruise Logo -->
-      <a href="#top" class="header-left" aria-label="Irwin Car Cruise Home">
-        <img
-          src="assets/img/logo.jpg"
-          alt="Irwin Car Cruise Logo"
-          class="event-logo"
-        >
-      </a>
+        <div class="header-left">
+          <a href="#top" aria-label="Irwin Car Cruise Home">
+            <img class="event-logo" src="img/event_logo.png" alt="Irwin Car Cruise logo">
+          </a>
+        </div>
 
-      <!-- Mobile Hamburger Button -->
-      <button
-        class="nav-toggle"
-        id="navToggle"
-        aria-label="Toggle navigation"
-        aria-expanded="false"
-        aria-controls="nav"
-      >
-        ☰
-      </button>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
 
-      <!-- Center Nav -->
-      <nav class="nav" id="nav" aria-label="Primary navigation">
-        <a href="#about">About</a>
-        <a href="#details">Details</a>
-        <a href="#register">Register</a>
-        <a href="#sponsors">Sponsors</a>
-        <a href="#faq">FAQ</a>
-      </nav>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="#about">About</a>
+          <a href="#details">Event Details</a>
+          <a href="#register">Register</a>
+          <a href="#sponsors">Sponsors</a>
+          <a href="#faq">FAQ</a>
+        </nav>
 
-      <!-- Right: IBPA Logo (linked) -->
-      <a
-        href="https://www.irwinbpa.com"
-        target="_blank"
-        rel="noopener"
-        class="header-right"
-        aria-label="Visit Irwin Business & Professional Association"
-      >
-        <img
-          src="https://static.wixstatic.com/media/090148_0d085a14ec5448d088634db0a2b88ce4~mv2.png/v1/fill/w_202,h_92,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IBPA%20Logo_v3.png"
-          alt="Irwin Business & Professional Association Logo"
-          class="ibpa-logo"
-        >
-      </a>
+        <div class="header-right">
+          <a href="https://www.irwinpa.com/" target="_blank" rel="noopener" aria-label="Presented by IBPA">
+            <img class="ibpa-logo" src="img/ibpa_logo.png" alt="IBPA logo">
+          </a>
+        </div>
 
+      </div>
     </div>
   </header>
 
+
   <!-- ================= HERO ================= -->
-  <section class="hero">
+  <main id="top" class="hero">
     <div class="hero-bg" aria-hidden="true"></div>
 
     <div class="container hero-inner">
       <div class="hero-card">
-
-        <span class="pill">Presented by the Irwin Business &amp; Professional Association</span>
-
+        <div class="pill">Presented by the Irwin Business & Professional Association</div>
         <h1>Irwin Car Cruise</h1>
         <p class="hero-sub">
-          <strong>Saturday, April 25, 2026</strong> • Downtown Irwin, PA
+          Saturday, April 25, 2026 • Downtown Irwin, PA
         </p>
 
         <div class="hero-actions">
-          <a href="#register" class="btn btn-gold">Register Your Vehicle</a>
-          <a href="#about" class="btn btn-ghost">Learn More</a>
+          <a class="btn btn-gold" href="#register">Register Your Vehicle</a>
+          <a class="btn btn-ghost" href="#about">Learn More</a>
         </div>
 
         <div class="hero-stats">
           <div class="stat">
-            <span class="stat-label">Pre-Reg</span>
-            <span class="stat-value">$10</span>
+            <div class="stat-label">Pre-reg</div>
+            <div class="stat-value">$10</div>
           </div>
           <div class="stat">
-            <span class="stat-label">Day-Of</span>
-            <span class="stat-value">$15</span>
+            <div class="stat-label">Day-of</div>
+            <div class="stat-value">$15</div>
           </div>
           <div class="stat">
-            <span class="stat-label">Availability</span>
-            <span class="stat-value">Metered</span>
+            <div class="stat-label">Availability</div>
+            <div class="stat-value">Metered</div>
           </div>
         </div>
-
       </div>
     </div>
-  </section>
+  </main>
+
 
   <!-- ================= ABOUT ================= -->
-  <section class="section" id="about">
-    <div class="container two-col">
+  <section id="about" class="section">
+    <div class="container">
+      <div class="two-col">
+        <div>
+          <h2>About the Event</h2>
+          <p class="lead">
+            A springtime car cruise in the heart of Irwin featuring classic, custom, and modern vehicles in a relaxed downtown setting.
+          </p>
 
-      <div>
-        <h2>About the Event</h2>
-        <p class="lead">
-          A springtime car cruise in the heart of Irwin featuring classic,
-          custom, and modern vehicles in a relaxed downtown setting.
-        </p>
+          <div class="info-cards">
+            <div class="info-card">
+              <h3>Downtown Irwin</h3>
+              <p>Main Street area</p>
+            </div>
+            <div class="info-card">
+              <h3>All Vehicles Welcome</h3>
+              <p>Classic • Custom • Modern</p>
+            </div>
+            <div class="info-card">
+              <h3>Easy Check-In</h3>
+              <p>Online registration encouraged</p>
+            </div>
+          </div>
+        </div>
 
-        <div class="info-cards">
-          <div class="info-card">
-            <h3>Downtown Irwin</h3>
-            <p>Main Street area</p>
+        <div class="visual-card" role="img" aria-label="Yellow hot rod featured photo">
+          <div class="visual-title">Saturday April 25, 2026 • 12–4p</div>
+          <div class="visual-sub">Bring your ride. Bring your friends. Downtown vibes.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= EVENT DETAILS (FIXED) ================= -->
+  <section id="details" class="section alt">
+    <div class="container">
+      <h2>Event Details</h2>
+      <p class="lead">Everything you need for a smooth day-of experience.</p>
+
+      <!-- ✅ IMPORTANT: This markup matches the fixed CSS -->
+      <div class="detail-tiles">
+        <div class="tile tile-inline">
+          <div class="tile-k">When</div>
+          <div class="tile-v">
+            <strong>April 25, 2026</strong>
           </div>
-          <div class="info-card">
-            <h3>All Vehicles Welcome</h3>
-            <p>Classic • Custom • Modern</p>
+        </div>
+
+        <div class="tile tile-inline">
+          <div class="tile-k">Where</div>
+          <div class="tile-v">
+            <strong>Downtown Irwin</strong>
+            <span class="tile-v-sub">Main Street</span>
           </div>
-          <div class="info-card">
-            <h3>Easy Check-In</h3>
-            <p>Online registration encouraged</p>
+        </div>
+
+        <div class="tile tile-inline">
+          <div class="tile-k">Cost</div>
+          <div class="tile-v">
+            <strong>$10 / $15</strong>
+            <span class="tile-v-sub">Pre-reg / Day-of</span>
           </div>
         </div>
       </div>
-
-      <div class="visual-card">
-        <span class="visual-title">Saturday April 25, 2026 • 12-4p</span>
-      </div>
-
     </div>
   </section>
 
-  <!-- ================= DETAILS ================= -->
-  <section class="section alt" id="details">
-   <div class="detail-tiles">
-  <div class="tile tile-inline">
-    <div class="tile-k">When</div>
-    <div class="tile-v">
-      <strong>April 25, 2026</strong>
-    </div>
-  </div>
-
-  <div class="tile tile-inline">
-    <div class="tile-k">Where</div>
-    <div class="tile-v">
-      <strong>Downtown Irwin</strong>
-      <span class="tile-v-sub">Main Street</span>
-    </div>
-  </div>
-
-  <div class="tile tile-inline">
-    <div class="tile-k">Cost</div>
-    <div class="tile-v">
-      <strong>$10 / $15</strong>
-      <span class="tile-v-sub">Pre-reg / Day-of</span>
-    </div>
-  </div>
-</div>
-
-  </section>
 
   <!-- ================= REGISTER ================= -->
-  <section class="section" id="register">
+  <section id="register" class="section">
     <div class="container">
-      <h2>Pre-Register Your Vehicle</h2>
-      <p class="muted">
-        Pre-registration is recommended. Day-of registration is metered and based on available space.
-      </p>
+      <h2>Register</h2>
+      <p class="lead">Pre-register online to speed up check-in.</p>
 
       <div class="form-wrap">
+        <!-- Replace with your embedded form -->
         <iframe
-          id="JotFormIFrame-243356587414160"
-          title="Irwin Car Cruise Registration Form"
-          src="https://pci.jotform.com/form/243356587414160"
-          frameborder="0"
-          style="width:100%;height:900px;border:none;"
-          allow="geolocation; microphone; camera; fullscreen; payment"
-          scrolling="no">
-        </iframe>
+          title="Vehicle Registration"
+          src="about:blank"
+          style="width:100%;height:700px;border:0;"
+          loading="lazy"></iframe>
       </div>
 
-      <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
-      <script>
-        window.jotformEmbedHandler(
-          "iframe[id='JotFormIFrame-243356587414160']",
-          "https://pci.jotform.com/"
-        );
-      </script>
+      <div class="center">
+        <a class="btn btn-gold" href="#" target="_blank" rel="noopener">Open Registration Form</a>
+      </div>
     </div>
   </section>
 
+
   <!-- ================= SPONSORS ================= -->
-  <section class="section alt" id="sponsors">
+  <section id="sponsors" class="section alt">
     <div class="container">
       <h2>Sponsors</h2>
+      <p class="lead">Thank you to the businesses that make this event possible.</p>
 
       <div class="sponsor-grid">
-        <div class="sponsor-tile">Sponsor Logo</div>
-        <div class="sponsor-tile">Sponsor Logo</div>
-        <div class="sponsor-tile">Sponsor Logo</div>
         <div class="sponsor-tile">Sponsor Logo</div>
         <div class="sponsor-tile">Sponsor Logo</div>
         <div class="sponsor-tile">Sponsor Logo</div>
       </div>
 
       <div class="center">
-        <a
-          href="mailto:irwinbpa@gmail.com?subject=Irwin%20Car%20Cruise%20Sponsorship"
-          class="btn btn-gold"
-        >
-          Become a Sponsor
-        </a>
+        <a class="btn btn-ghost" href="#register">Become a Sponsor</a>
       </div>
     </div>
   </section>
 
+
   <!-- ================= FAQ ================= -->
-  <section class="section" id="faq">
+  <section id="faq" class="section">
     <div class="container">
       <h2>FAQ</h2>
+      <p class="lead">Quick answers to common questions.</p>
 
       <details>
-        <summary>Do I have to pre-register?</summary>
-        <p>No, but it is recommended for faster check-in and planning.</p>
+        <summary>What time is check-in?</summary>
+        <p>Check-in details will be posted here. Pre-registration is encouraged for faster entry.</p>
       </details>
 
       <details>
-        <summary>How does day-of registration work?</summary>
-        <p>Day-of entry is metered and based on available space.</p>
+        <summary>Can I register day-of?</summary>
+        <p>Yes — day-of registration is available as space allows.</p>
       </details>
 
       <details>
-        <summary>Where is check-in?</summary>
-        <p>3rd St and Main St, Irwin, PA.</p>
+        <summary>Is this event rain or shine?</summary>
+        <p>Event guidance will be posted closer to the date.</p>
       </details>
-
-      <p class="muted" style="margin-top:18px;">
-        Questions? Email us at
-        <a href="mailto:irwinbpa@gmail.com">irwincarcruise@gmail.com</a>
-      </p>
     </div>
   </section>
+
 
   <!-- ================= FOOTER ================= -->
   <footer class="footer">
     <div class="container footer-inner">
+      <div>© <span id="year"></span> Irwin Car Cruise</div>
       <div>
-        <strong>Irwin Car Cruise</strong><br>
-        April 25, 2026 • Presented by IBPA
+        <a href="#top">Back to top</a>
       </div>
-      <a href="#top">Back to top ↑</a>
     </div>
   </footer>
 
-  <!-- ================= FLOATING BACK TO TOP BUTTON (FOLLOWING) ================= -->
+  <!-- Floating back to top -->
   <button id="backToTop" aria-label="Back to top">↑</button>
 
-  <!-- ================= JS: HAMBURGER + BACK TO TOP ================= -->
   <script>
-    // Hamburger
-    const navToggle = document.getElementById("navToggle");
-    const nav = document.getElementById("nav");
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
 
     function closeNav() {
-      nav.classList.remove("show");
-      navToggle.setAttribute("aria-expanded", "false");
-      navToggle.textContent = "☰";
+      if (!nav || !navToggle) return;
+      nav.classList.remove('show');
+      navToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
     }
 
-    navToggle.addEventListener("click", () => {
-      const isOpen = nav.classList.toggle("show");
-      navToggle.setAttribute("aria-expanded", String(isOpen));
-      navToggle.textContent = isOpen ? "✕" : "☰";
+    function openNav() {
+      if (!nav || !navToggle) return;
+      nav.classList.add('show');
+      navToggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+
+    navToggle?.addEventListener('click', () => {
+      const isOpen = nav.classList.contains('show');
+      isOpen ? closeNav() : openNav();
     });
 
-    // Close menu after tapping link on mobile
-    nav.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        if (window.innerWidth <= 860) closeNav();
-      });
+    document.addEventListener('click', (e) => {
+      if (!nav || !navToggle) return;
+      const clickedInside = nav.contains(e.target) || navToggle.contains(e.target);
+      if (!clickedInside) closeNav();
     });
 
-    // Close menu if resizing back to desktop
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 860) closeNav();
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeNav();
     });
 
-    // Floating Back-to-Top
-    const backToTopBtn = document.getElementById("backToTop");
-
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) {
-        backToTopBtn.classList.add("show");
-      } else {
-        backToTopBtn.classList.remove("show");
-      }
+    nav?.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => closeNav());
     });
 
-    backToTopBtn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+    // Back to top button
+    const backToTop = document.getElementById('backToTop');
+    function onScroll() {
+      if (!backToTop) return;
+      if (window.scrollY > 450) backToTop.classList.add('show');
+      else backToTop.classList.remove('show');
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    backToTop?.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
 
