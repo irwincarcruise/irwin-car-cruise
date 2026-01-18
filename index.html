@@ -30,8 +30,19 @@
       >
     </a>
 
+    <!-- Mobile Hamburger Button -->
+    <button
+      class="nav-toggle"
+      id="navToggle"
+      aria-label="Toggle navigation"
+      aria-expanded="false"
+      aria-controls="nav"
+    >
+      ☰
+    </button>
+
     <!-- Center Nav -->
-    <nav class="nav" id="nav">
+    <nav class="nav" id="nav" aria-label="Primary navigation">
       <a href="#about">About</a>
       <a href="#details">Details</a>
       <a href="#register">Register</a>
@@ -230,6 +241,12 @@
       <summary>Where is check-in?</summary>
       <p>Downtown Irwin – exact location announced closer to the event.</p>
     </details>
+
+    <p class="muted" style="margin-top:18px;">
+      Questions? Email us at
+      <a href="mailto:irwincarcruise@gmail.com">irwincarcruise@gmail.com</a>
+    </p>
+
   </div>
 </section>
 
@@ -244,6 +261,35 @@
   </div>
 </footer>
 
-<script src="assets/js/script.js"></script>
+<!-- ================= HAMBURGER JS ================= -->
+<script>
+  const navToggle = document.getElementById("navToggle");
+  const nav = document.getElementById("nav");
+
+  function closeNav() {
+    nav.classList.remove("show");
+    navToggle.setAttribute("aria-expanded", "false");
+    navToggle.textContent = "☰";
+  }
+
+  navToggle.addEventListener("click", () => {
+    const isOpen = nav.classList.toggle("show");
+    navToggle.setAttribute("aria-expanded", String(isOpen));
+    navToggle.textContent = isOpen ? "✕" : "☰";
+  });
+
+  // Close the menu when a nav link is clicked (mobile UX)
+  nav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 860) closeNav();
+    });
+  });
+
+  // Close menu if resizing back to desktop
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 860) closeNav();
+  });
+</script>
+
 </body>
 </html>
