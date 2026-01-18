@@ -89,11 +89,15 @@ body {
   overflow: hidden;
 }
 
+/* ✅ LESS WASHOUT so the car photo shows more */
 .hero-bg {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(rgba(255,255,255,0.88), rgba(246,247,255,0.92)),
+    linear-gradient(
+      rgba(255,255,255,0.65),
+      rgba(240,243,255,0.70)
+    ),
     url("../img/background.jpeg");
   background-size: cover;
   background-position: center;
@@ -114,13 +118,15 @@ body {
 
 .hero-inner { position: relative; }
 
+/* ✅ Slight blur + glass to keep text readable without hiding image */
 .hero-card {
   max-width: 760px;
-  background: rgba(255,255,255,.9);
+  background: rgba(255,255,255,.92);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: 34px;
+  backdrop-filter: blur(4px);
 }
 
 .pill {
@@ -264,6 +270,7 @@ h2 {
   margin: 0;
 }
 
+/* ✅ SHOW YELLOW CAR MORE (less dark overlay) */
 .visual-card {
   position: relative;
   color: #fff;
@@ -274,7 +281,10 @@ h2 {
   justify-content: flex-end;
   overflow: hidden;
   background:
-    linear-gradient(rgba(15,17,26,0.88), rgba(28,32,51,0.92)),
+    linear-gradient(
+      rgba(15,17,26,0.55),
+      rgba(28,32,51,0.65)
+    ),
     url("../img/yellow_car.jpg");
   background-size: cover;
   background-position: center;
@@ -286,22 +296,27 @@ h2 {
   inset: 0;
   background: radial-gradient(
     ellipse at top left,
-    rgba(255,215,0,0.15),
+    rgba(255,215,0,0.18),
     transparent 60%
   );
   pointer-events: none;
 }
 
-.visual-title {
+/* ✅ Helps readability while letting image show */
+.visual-title,
+.visual-sub {
   position: relative;
+  text-shadow: 0 4px 14px rgba(0,0,0,.30);
+}
+
+.visual-title {
   font-family: Poppins, sans-serif;
   font-size: 26px;
   font-weight: 800;
 }
 
 .visual-sub {
-  position: relative;
-  opacity: .88;
+  opacity: .92;
   margin-top: 6px;
 }
 
