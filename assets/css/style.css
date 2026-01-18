@@ -9,13 +9,9 @@
   --max-width: 1200px;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -41,6 +37,7 @@ body {
 }
 
 .header-inner {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -48,17 +45,14 @@ body {
   padding: 12px 0;
 }
 
-.event-logo {
-  height: 46px;
-}
-
-.ibpa-logo {
-  height: 42px;
-}
+.event-logo { height: 46px; width: auto; display: block; }
+.ibpa-logo  { height: 42px; width: auto; display: block; }
 
 .nav {
   display: flex;
   gap: 14px;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav a {
@@ -74,6 +68,19 @@ body {
   background: rgba(212,175,55,.15);
 }
 
+/* Hamburger button (hidden on desktop) */
+.nav-toggle {
+  display: none;
+  background: rgba(0,0,0,.04);
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 14px;
+  padding: 10px 12px;
+  font-size: 22px;
+  font-weight: 900;
+  cursor: pointer;
+  line-height: 1;
+}
+
 /* ================= HERO ================= */
 
 .hero {
@@ -86,19 +93,26 @@ body {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(
-      rgba(255,255,255,0.88),
-      rgba(246,247,255,0.92)
-    ),
+    linear-gradient(rgba(255,255,255,0.88), rgba(246,247,255,0.92)),
     url("../img/background.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.hero-inner {
-  position: relative;
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0,0,0,0) 55%,
+    rgba(0,0,0,0.12) 100%
+  );
+  pointer-events: none;
 }
+
+.hero-inner { position: relative; }
 
 .hero-card {
   max-width: 760px;
@@ -157,9 +171,7 @@ h1 {
   color: #111;
 }
 
-.btn-gold:hover {
-  filter: brightness(.95);
-}
+.btn-gold:hover { filter: brightness(.95); }
 
 .btn-ghost {
   background: rgba(0,0,0,.05);
@@ -177,6 +189,7 @@ h1 {
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 14px;
+  background: rgba(255,255,255,.7);
 }
 
 .stat-label {
@@ -194,9 +207,7 @@ h1 {
 
 /* ================= SECTIONS ================= */
 
-.section {
-  padding: 80px 0;
-}
+.section { padding: 80px 0; }
 
 .section.alt {
   background: var(--light);
@@ -216,9 +227,7 @@ h2 {
   max-width: 640px;
 }
 
-.muted {
-  color: var(--muted);
-}
+.muted { color: var(--muted); }
 
 /* ================= ABOUT ================= */
 
@@ -246,12 +255,13 @@ h2 {
 .info-card h3 {
   font-family: Poppins, sans-serif;
   font-size: 14px;
-  margin-bottom: 6px;
+  margin: 0 0 6px;
 }
 
 .info-card p {
   font-size: 13px;
   color: var(--muted);
+  margin: 0;
 }
 
 .visual-card {
@@ -263,17 +273,13 @@ h2 {
   flex-direction: column;
   justify-content: flex-end;
   overflow: hidden;
-
   background:
-    linear-gradient(
-      rgba(15,17,26,0.88),
-      rgba(28,32,51,0.92)
-    ),
+    linear-gradient(rgba(15,17,26,0.88), rgba(28,32,51,0.92)),
     url("../img/yellow_car.jpg");
-
   background-size: cover;
   background-position: center;
 }
+
 .visual-card::after {
   content: "";
   position: absolute;
@@ -287,13 +293,16 @@ h2 {
 }
 
 .visual-title {
+  position: relative;
   font-family: Poppins, sans-serif;
   font-size: 26px;
   font-weight: 800;
 }
 
 .visual-sub {
-  opacity: .85;
+  position: relative;
+  opacity: .88;
+  margin-top: 6px;
 }
 
 /* ================= DETAILS ================= */
@@ -362,6 +371,7 @@ h2 {
   font-family: Poppins, sans-serif;
   font-weight: 700;
   color: rgba(0,0,0,.5);
+  background: rgba(255,255,255,.7);
 }
 
 .center {
@@ -388,6 +398,8 @@ summary {
   cursor: pointer;
 }
 
+details p { color: var(--muted); }
+
 /* ================= FOOTER ================= */
 
 .footer {
@@ -401,6 +413,7 @@ summary {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  gap: 12px;
 }
 
 .footer a {
@@ -409,16 +422,12 @@ summary {
   font-weight: 700;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= RESPONSIVE + MOBILE NAV ================= */
 
 @media (max-width: 960px) {
-  h1 {
-    font-size: 44px;
-  }
+  h1 { font-size: 44px; }
 
-  .two-col {
-    grid-template-columns: 1fr;
-  }
+  .two-col { grid-template-columns: 1fr; }
 
   .info-cards,
   .detail-tiles,
@@ -426,7 +435,37 @@ summary {
     grid-template-columns: 1fr;
   }
 
-  .hero-stats {
-    grid-template-columns: 1fr;
+  .hero-stats { grid-template-columns: 1fr; }
+}
+
+/* Hamburger + dropdown nav */
+@media (max-width: 860px) {
+  .nav-toggle { display: inline-flex; }
+
+  .nav {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    margin: 0 12px;
+    background: rgba(255,255,255,.98);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .nav.show { display: flex; }
+
+  .nav a {
+    padding: 14px 14px;
+    border-radius: 14px;
+  }
+
+  .nav a:hover {
+    background: rgba(212,175,55,.14);
   }
 }
