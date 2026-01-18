@@ -422,6 +422,43 @@ details p { color: var(--muted); }
   font-weight: 700;
 }
 
+/* ================= FLOATING BACK TO TOP (FOLLOWING) ================= */
+
+#backToTop {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: var(--gold);
+  color: #111;
+  font-size: 22px;
+  font-weight: 900;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity .25s ease, transform .25s ease, visibility .25s;
+  box-shadow: 0 12px 28px rgba(0,0,0,.25);
+  z-index: 9999;
+}
+
+#backToTop.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#backToTop:hover {
+  filter: brightness(.95);
+}
+
 /* ================= RESPONSIVE + MOBILE NAV ================= */
 
 @media (max-width: 960px) {
@@ -438,27 +475,31 @@ details p { color: var(--muted); }
   .hero-stats { grid-template-columns: 1fr; }
 }
 
-/* Hamburger + dropdown nav */
+/* Mobile dropdown nav that ACTUALLY hides desktop links */
 @media (max-width: 860px) {
-  .nav-toggle { display: inline-flex; }
+  .nav-toggle { display: inline-flex; margin-left: auto; }
 
   .nav {
+    display: none !important;
+
     position: absolute;
     top: calc(100% + 10px);
     left: 0;
     right: 0;
     margin: 0 12px;
+
     background: rgba(255,255,255,.98);
     border: 1px solid var(--border);
     border-radius: 18px;
     box-shadow: var(--shadow);
     padding: 10px;
-    display: none;
+
     flex-direction: column;
     gap: 6px;
+    z-index: 999;
   }
 
-  .nav.show { display: flex; }
+  .nav.show { display: flex !important; }
 
   .nav a {
     padding: 14px 14px;
@@ -468,36 +509,10 @@ details p { color: var(--muted); }
   .nav a:hover {
     background: rgba(212,175,55,.14);
   }
-}
-/* ================= BACK TO TOP BUTTON ================= */
 
-#backToTop {
-  position: fixed;
-  right: 22px;
-  bottom: 22px;
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  border: none;
-  background: var(--gold);
-  color: #111;
-  font-size: 22px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 12px 28px rgba(0,0,0,.25);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity .25s ease, transform .25s ease, visibility .25s;
-  transform: translateY(10px);
-  z-index: 999;
-}
-
-#backToTop.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-#backToTop:hover {
-  filter: brightness(.95);
+  /* Keep the floating button out of the iOS browser UI area */
+  #backToTop {
+    bottom: 80px;
+    right: 16px;
+  }
 }
