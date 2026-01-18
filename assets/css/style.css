@@ -664,3 +664,60 @@ button:focus-visible {
   html { scroll-behavior: auto; }
   * { transition: none !important; animation: none !important; }
 }
+/* ================= MOBILE POLISH ================= */
+@media (max-width: 520px) {
+  /* HERO: less cramped */
+  .hero {
+    padding: 64px 0 52px;
+  }
+
+  .hero-card {
+    padding: 22px;
+  }
+
+  h1 {
+    font-size: 38px;
+    line-height: 1.05;
+  }
+
+  /* Date/time/location: readable and not smushed */
+  .hero-sub {
+    font-size: 16px;
+    line-height: 1.45;
+    margin-bottom: 18px;
+  }
+
+  /* Keep pills from looking huge on phones */
+  .pill {
+    font-size: 11px;
+    padding: 7px 12px;
+    margin-bottom: 12px;
+  }
+
+  /* Buttons stack nicer */
+  .hero-actions {
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  /* Yellow car: STOP squashing */
+  .visual-card {
+    min-height: 240px;            /* key fix */
+    background-size: cover;       /* ensure no stretch */
+    background-position: center;  /* crop nicely */
+    padding: 18px;
+  }
+}
+
+/* Slightly larger phones / small tablets */
+@media (max-width: 860px) {
+  .visual-card {
+    min-height: 280px;            /* keeps it looking like an image, not a stripe */
+    background-size: cover;
+    background-position: center;
+  }
+}
