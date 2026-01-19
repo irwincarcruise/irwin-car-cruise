@@ -721,3 +721,227 @@ button:focus-visible {
     background-position: center;
   }
 }
+/* ================= SPONSOR PAGE ADDITIONS ================= */
+
+:root{
+  --red: #9b1c1c;
+  --red-soft: rgba(155, 28, 28, .10);
+}
+
+/* Optional: slightly different hero wash for sponsors page */
+.sponsors-bg{
+  background:
+    linear-gradient(rgba(255,255,255,0.72), rgba(240,243,255,0.76)),
+    url("../../assets/img/background.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Levels grid */
+.sponsor-levels{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.sponsor-card{
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);
+  padding: 18px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.sponsor-card::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width: 6px;
+  background: linear-gradient(to bottom, var(--gold), var(--red));
+  opacity: .95;
+}
+
+.sponsor-top{
+  padding-left: 6px;
+  margin-bottom: 10px;
+}
+
+.sponsor-badge{
+  display: inline-block;
+  font-family: Poppins, sans-serif;
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: .02em;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(212,175,55,.18);
+  border: 1px solid rgba(212,175,55,.45);
+  margin-bottom: 10px;
+}
+
+.sponsor-card h3{
+  font-family: Poppins, sans-serif;
+  font-size: 18px;
+  margin: 0 0 6px;
+}
+
+.sponsor-price{
+  font-family: Poppins, sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1.05;
+}
+
+.sponsor-price span{
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  margin-left: 6px;
+}
+
+/* bullet list */
+.sponsor-list{
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.sponsor-list li{
+  margin: 8px 0;
+}
+
+.sponsor-actions{
+  margin-top: auto;
+  display: grid;
+  gap: 10px;
+  padding-top: 12px;
+}
+
+/* Make gold tier feel slightly featured */
+.sponsor-card--gold{
+  border-color: rgba(212,175,55,.55);
+  box-shadow: 0 16px 36px rgba(0,0,0,.10);
+}
+
+.sponsor-card--gold::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: radial-gradient(ellipse at top right, rgba(212,175,55,.18), transparent 55%);
+  pointer-events:none;
+}
+
+/* Trophy + Events split */
+.trophy-wrap{
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 18px;
+  align-items: start;
+  margin-top: 14px;
+}
+
+.trophy-card{
+  background:#fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);
+}
+
+.trophy-card h3{
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  margin: 0 0 8px;
+}
+
+/* Events side card */
+.events-card{
+  background: linear-gradient(180deg, rgba(155,28,28,.08), rgba(212,175,55,.10));
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);
+}
+
+.events-pill{
+  display:inline-block;
+  font-family: Poppins, sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(17,17,17,.06);
+  border: 1px solid rgba(17,17,17,.10);
+  margin-bottom: 12px;
+}
+
+.events-list{
+  margin: 0;
+  padding-left: 18px;
+  color: #2a2f3a;
+  line-height: 1.55;
+}
+
+.events-list li{ margin: 8px 0; }
+
+.events-note{
+  margin-top: 12px;
+  font-size: 13px;
+  color: #4a5160;
+}
+
+/* Contact card */
+.contact-card{
+  margin-top: 18px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);
+  padding: 18px;
+}
+
+.contact-row{
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+.contact-row:last-child{ border-bottom: none; }
+
+.contact-k{
+  font-family: Poppins, sans-serif;
+  font-weight: 800;
+  color: var(--muted);
+}
+
+.contact-v a{
+  font-weight: 800;
+  text-decoration: none;
+  color: #111;
+}
+
+/* Responsive */
+@media (max-width: 1100px){
+  .sponsor-levels{ grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 860px){
+  .trophy-wrap{ grid-template-columns: 1fr; }
+}
+
+@media (max-width: 520px){
+  .sponsor-levels{ grid-template-columns: 1fr; }
+  .contact-row{ grid-template-columns: 1fr; }
+}
