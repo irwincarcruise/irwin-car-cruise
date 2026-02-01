@@ -3,7 +3,7 @@
   if (!mount) return;
 
   const fallbackHtml = '<p class="muted">Sponsors to be announced soon...</p>';
-  const API_URL = 'https://2dc2431b-ca2c-49be-856d-1cc0dc422ad7-00-2v43r5biefaaw.riker.replit.dev/api/sponsors.json';
+  const API_URL = 'https://jotform-sponsor-fetch.replit.app/api/sponsors.json';
 
   mount.innerHTML = fallbackHtml;
 
